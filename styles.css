@@ -91,6 +91,127 @@
   --band-accent:  #DE9080;
 }
 
+
+/* --- Cool gray paper, petrol teal --- */
+[data-theme="slate"] {
+  --paper:        #F4F5F6;
+  --paper-2:      #E7EAEC;
+  --card:         #FFFFFF;
+  --ink:          #16191C;
+  --ink-2:        #5C666E;
+  --line:         #DCE1E4;
+  --line-strong:  #BEC7CC;
+  --accent:       #0E6B72;
+  --accent-deep:  #094E54;
+  --accent-soft:  #DCEDEE;
+  --on-accent:    #F2FBFB;
+  --band:         #14181B;
+  --band-ink:     #EAEEF0;
+  --band-ink-2:   #909BA3;
+  --band-line:    #2A3237;
+  --band-accent:  #4FBFC6;
+}
+
+/* --- White paper, cobalt blue --- */
+[data-theme="cobalt"] {
+  --paper:        #FAFAFC;
+  --paper-2:      #EEF0F7;
+  --card:         #FFFFFF;
+  --ink:          #0C1017;
+  --ink-2:        #565E6E;
+  --line:         #E1E4EC;
+  --line-strong:  #C2C8D6;
+  --accent:       #1B45D8;
+  --accent-deep:  #1234A8;
+  --accent-soft:  #E1E7FD;
+  --on-accent:    #FFFFFF;
+  --band:         #0B1020;
+  --band-ink:     #E9ECF5;
+  --band-ink-2:   #8E97AC;
+  --band-line:    #1E2740;
+  --band-accent:  #7E99FF;
+}
+
+/* --- Blue-gray paper, navy ink, coral accent --- */
+[data-theme="harbor"] {
+  --paper:        #F2F5F7;
+  --paper-2:      #E4EAEF;
+  --card:         #FDFEFF;
+  --ink:          #12293D;
+  --ink-2:        #566E80;
+  --line:         #D7E0E7;
+  --line-strong:  #B4C3CE;
+  --accent:       #C0432E;
+  --accent-deep:  #97331F;
+  --accent-soft:  #FAE1DC;
+  --on-accent:    #FFF7F5;
+  --band:         #10293C;
+  --band-ink:     #E8EFF3;
+  --band-ink-2:   #91A7B5;
+  --band-line:    #24455C;
+  --band-accent:  #F0806A;
+}
+
+/* --- Ivory paper, ochre accent, pure black bands --- */
+[data-theme="mustard"] {
+  --paper:        #FCFBF4;
+  --paper-2:      #F3F0E1;
+  --card:         #FFFFFF;
+  --ink:          #12120E;
+  --ink-2:        #5F5D50;
+  --line:         #E6E2CE;
+  --line-strong:  #CBC5A8;
+  --accent:       #966D00;
+  --accent-deep:  #6F5100;
+  --accent-soft:  #F6EBC8;
+  --on-accent:    #FFFDF5;
+  --band:         #12120E;
+  --band-ink:     #F4F1E4;
+  --band-ink-2:   #9C9887;
+  --band-line:    #2B2A22;
+  --band-accent:  #EDBB3A;
+}
+
+/* --- Dark charcoal page, amber accent --- */
+[data-theme="ink"] {
+  --paper:        #17181A;
+  --paper-2:      #1E2023;
+  --card:         #212327;
+  --ink:          #F0EEE9;
+  --ink-2:        #A5A29B;
+  --line:         #2E3136;
+  --line-strong:  #414650;
+  --accent:       #E0912F;
+  --accent-deep:  #F0A64B;
+  --accent-soft:  #3A2C18;
+  --on-accent:    #17140E;
+  --band:         #0E0F11;
+  --band-ink:     #F0EEE9;
+  --band-ink-2:   #8E8C86;
+  --band-line:    #26282C;
+  --band-accent:  #E9A445;
+}
+
+/* --- Bone paper, pure black, signal red --- */
+[data-theme="bone"] {
+  --paper:        #FAF8F3;
+  --paper-2:      #EFECE3;
+  --card:         #FFFFFF;
+  --ink:          #0A0A0A;
+  --ink-2:        #5B5B57;
+  --line:         #E2DED3;
+  --line-strong:  #C3BEB0;
+  --accent:       #D22B1F;
+  --accent-deep:  #A11D13;
+  --accent-soft:  #FADFDC;
+  --on-accent:    #FFFFFF;
+  --band:         #0A0A0A;
+  --band-ink:     #F5F2EB;
+  --band-ink-2:   #96938B;
+  --band-line:    #242422;
+  --band-accent:  #F0503F;
+}
+
 /* ---------- Reset ---------- */
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
@@ -550,21 +671,26 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   position: fixed; z-index: 90;
   left: 50%; transform: translateX(-50%);
   bottom: 14px;
-  display: flex; align-items: center; gap: 4px;
+  max-width: min(94vw, 900px);
+  overflow-x: auto;
+  scrollbar-width: none;
+  display: flex; align-items: center; gap: 4px; flex-wrap: nowrap;
   background: var(--card);
   border: 1px solid var(--line-strong);
   border-radius: 999px;
   padding: 5px 6px 5px 12px;
   box-shadow: 0 10px 30px -12px rgba(0,0,0,.45);
 }
+.theme-switch::-webkit-scrollbar { display: none; }
 .theme-switch-label {
   font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
-  font-weight: 700; color: var(--ink-2); margin-right: 4px;
+  font-weight: 700; color: var(--ink-2); margin-right: 4px; flex: 0 0 auto;
 }
 .theme-switch button {
   border: 0; background: transparent; color: var(--ink-2);
   font-size: 0.8rem; font-weight: 600;
-  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  padding: 6px 11px; border-radius: 999px; cursor: pointer;
+  flex: 0 0 auto; white-space: nowrap;
 }
 .theme-switch button:hover { color: var(--ink); }
 .theme-switch button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }

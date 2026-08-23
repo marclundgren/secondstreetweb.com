@@ -1,8 +1,10 @@
 /* Review-only palette switcher.
-   Usage: ?theme=clay | ?theme=navy | ?theme=oxblood  (default: clay)
+   Usage: ?theme=<name>  (default: clay)
+   clay | navy | oxblood | slate | cobalt | harbor | mustard | ink | bone
    Delete this file and the .theme-switch block in index.html before launch. */
 (function () {
-  var THEMES = ['clay', 'navy', 'oxblood'];
+  var THEMES = ['clay', 'navy', 'oxblood', 'slate', 'cobalt',
+                'harbor', 'mustard', 'ink', 'bone'];
   var root = document.documentElement;
 
   function current() {

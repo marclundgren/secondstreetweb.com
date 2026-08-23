@@ -9,13 +9,20 @@ python3 -m http.server 8000
 
 ## Palette preview
 
-Three palettes are wired up so you can compare them:
+Nine palettes are wired up so you can compare them. Append `?theme=<name>`
+to the URL, e.g. `index.html?theme=slate`.
 
-| URL | Palette |
-| --- | --- |
-| `index.html` or `?theme=clay` | **Clay** — cream paper, terracotta accent, warm ink (default) |
-| `?theme=navy` | **Navy** — warm off-white, brass accent, deep navy bands |
-| `?theme=oxblood` | **Oxblood** — soft blush paper, deep burgundy accent |
+| Name | Paper | Accent | Reads as |
+| --- | --- | --- | --- |
+| `clay` *(default)* | warm cream | terracotta | local, hand-built, storefront |
+| `navy` | warm off-white | brass | established, civic |
+| `oxblood` | blush | deep burgundy | editorial, formal |
+| `slate` | cool gray | petrol teal | calm, precise, cool |
+| `cobalt` | near-white | cobalt blue | crisp, confident, direct |
+| `harbor` | blue-gray | coral on navy | coastal, warm-on-cool |
+| `mustard` | ivory | ochre on black | graphic, high-contrast |
+| `ink` | **dark charcoal** | amber | after-hours, premium |
+| `bone` | bone | signal red on black | Swiss, editorial, bold |
 
 There's also a pill switcher fixed at the bottom of the page. Pick a winner and
 delete `theme.js` plus the `.theme-switch` block in `index.html` — the palette
