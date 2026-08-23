@@ -9,20 +9,37 @@ python3 -m http.server 8000
 
 ## Palette preview
 
-Nine palettes are wired up so you can compare them. Append `?theme=<name>`
-to the URL, e.g. `index.html?theme=slate`.
+Nine palettes are wired up. Append `?theme=<name>`, e.g. `index.html?theme=teal`.
+
+Each theme is named for the colour you'd call the site — the accent that
+carries the headline, buttons and awning — except `ink`, where the dark
+ground is the dominant impression.
 
 | Name | Paper | Accent | Reads as |
 | --- | --- | --- | --- |
 | `clay` *(default)* | warm cream | terracotta | local, hand-built, storefront |
-| `navy` | warm off-white | brass | established, civic |
-| `oxblood` | blush | deep burgundy | editorial, formal |
-| `slate` | cool gray | petrol teal | calm, precise, cool |
-| `cobalt` | near-white | cobalt blue | crisp, confident, direct |
-| `harbor` | blue-gray | coral on navy | coastal, warm-on-cool |
-| `mustard` | ivory | ochre on black | graphic, high-contrast |
+| `crimson` | bone | signal red on black | Swiss, editorial, bold |
+| `oxblood` | blush | deep burgundy | restrained, formal |
+| `brass` | warm cream | brass on navy | established, civic |
+| `teal` | cool gray | petrol | calm, precise |
+| `cobalt` | near-white | cobalt blue | crisp, direct |
+| `plum` | mauve-gray | deep magenta | distinctive, unexpected |
+| `graphite` | warm gray | none — monochrome | severe, typographic |
 | `ink` | **dark charcoal** | amber | after-hours, premium |
-| `bone` | bone | signal red on black | Swiss, editorial, bold |
+
+Old names from the first two rounds (`navy`, `slate`, `bone`, `harbor`,
+`mustard`) still resolve — `theme.js` aliases them so shared links don't break.
+
+### How these were checked
+
+`clay` and `harbor` had accents only ΔE 9.3 apart on near-identical paper, and
+`navy`/`mustard` were ΔE 4.6 — visually the same palette twice. Both duplicates
+were cut and replaced (`plum`, `graphite`), and the remaining accents re-spaced
+so the closest pair is now ΔE 26. Every theme was also swept for WCAG contrast
+across thirteen foreground/background pairs; that turned up a brass accent below
+4.5:1 and form/button borders below 1.4.11's 3:1 in *all nine* themes, which is
+why there's a separate `--edge` token for interactive borders rather than
+reusing the decorative `--line-strong` hairline.
 
 There's also a pill switcher fixed at the bottom of the page. Pick a winner and
 delete `theme.js` plus the `.theme-switch` block in `index.html` — the palette

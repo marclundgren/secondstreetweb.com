@@ -32,7 +32,13 @@
   font-display: swap;
 }
 
-/* ---------- Palettes ---------- */
+/* ---------- Palettes ----------
+   Naming rule: a theme is named for the colour you'd call the site.
+   For the light themes that's the accent (headline, buttons, awning);
+   for the one dark theme it's the ground. Nine themes, hues spaced so
+   no two read as the same palette — see the audit note in README. */
+
+/* --- Cream paper, terracotta accent, warm dark bands --- */
 :root,
 [data-theme="clay"] {
   --paper:        #FBF6EE;
@@ -42,8 +48,9 @@
   --ink-2:        #6B6157;
   --line:         #E3D6C3;
   --line-strong:  #CDBBA1;
-  --accent:       #C0552F;
-  --accent-deep:  #96401F;
+  --edge:         #A8885B;
+  --accent:       #B24E23;
+  --accent-deep:  #8C3B18;
   --accent-soft:  #F7E3D8;
   --on-accent:    #FFF8F2;
   --band:         #26221D;
@@ -53,25 +60,7 @@
   --band-accent:  #E8926A;
 }
 
-[data-theme="navy"] {
-  --paper:        #F7F5EF;
-  --paper-2:      #EBE7DC;
-  --card:         #FFFEFA;
-  --ink:          #101F35;
-  --ink-2:        #566277;
-  --line:         #DCD6C7;
-  --line-strong:  #C0B79F;
-  --accent:       #9A6E15;
-  --accent-deep:  #75520C;
-  --accent-soft:  #F1E5C7;
-  --on-accent:    #FFFBF0;
-  --band:         #0F1E33;
-  --band-ink:     #EDE8DA;
-  --band-ink-2:   #93A0B5;
-  --band-line:    #253550;
-  --band-accent:  #DCAE45;
-}
-
+/* --- Blush paper, deep burgundy accent --- */
 [data-theme="oxblood"] {
   --paper:        #FCF7F3;
   --paper-2:      #F3E8E1;
@@ -80,6 +69,7 @@
   --ink-2:        #6D5551;
   --line:         #E7D8CF;
   --line-strong:  #CFB6AA;
+  --edge:         #AF8571;
   --accent:       #7E2230;
   --accent-deep:  #5A121F;
   --accent-soft:  #F5E1DE;
@@ -91,9 +81,29 @@
   --band-accent:  #DE9080;
 }
 
+/* --- Cream paper, brass accent, navy ink and bands --- */
+[data-theme="brass"] {
+  --paper:        #F7F5EF;
+  --paper-2:      #EBE7DC;
+  --card:         #FFFEFA;
+  --ink:          #101F35;
+  --ink-2:        #566277;
+  --line:         #DCD6C7;
+  --line-strong:  #C0B79F;
+  --edge:         #998B65;
+  --accent:       #906714;
+  --accent-deep:  #6C4D0F;
+  --accent-soft:  #F1E5C7;
+  --on-accent:    #FFFBF0;
+  --band:         #0F1E33;
+  --band-ink:     #EDE8DA;
+  --band-ink-2:   #93A0B5;
+  --band-line:    #253550;
+  --band-accent:  #DCAE45;
+}
 
-/* --- Cool gray paper, petrol teal --- */
-[data-theme="slate"] {
+/* --- Cool gray paper, petrol teal accent --- */
+[data-theme="teal"] {
   --paper:        #F4F5F6;
   --paper-2:      #E7EAEC;
   --card:         #FFFFFF;
@@ -101,6 +111,7 @@
   --ink-2:        #5C666E;
   --line:         #DCE1E4;
   --line-strong:  #BEC7CC;
+  --edge:         #7C8E98;
   --accent:       #0E6B72;
   --accent-deep:  #094E54;
   --accent-soft:  #DCEDEE;
@@ -112,7 +123,7 @@
   --band-accent:  #4FBFC6;
 }
 
-/* --- White paper, cobalt blue --- */
+/* --- Near-white paper, cobalt blue accent --- */
 [data-theme="cobalt"] {
   --paper:        #FAFAFC;
   --paper-2:      #EEF0F7;
@@ -121,6 +132,7 @@
   --ink-2:        #565E6E;
   --line:         #E1E4EC;
   --line-strong:  #C2C8D6;
+  --edge:         #8390AC;
   --accent:       #1B45D8;
   --accent-deep:  #1234A8;
   --accent-soft:  #E1E7FD;
@@ -132,47 +144,70 @@
   --band-accent:  #7E99FF;
 }
 
-/* --- Blue-gray paper, navy ink, coral accent --- */
-[data-theme="harbor"] {
-  --paper:        #F2F5F7;
-  --paper-2:      #E4EAEF;
-  --card:         #FDFEFF;
-  --ink:          #12293D;
-  --ink-2:        #566E80;
-  --line:         #D7E0E7;
-  --line-strong:  #B4C3CE;
-  --accent:       #C0432E;
-  --accent-deep:  #97331F;
-  --accent-soft:  #FAE1DC;
-  --on-accent:    #FFF7F5;
-  --band:         #10293C;
-  --band-ink:     #E8EFF3;
-  --band-ink-2:   #91A7B5;
-  --band-line:    #24455C;
-  --band-accent:  #F0806A;
-}
-
-/* --- Ivory paper, ochre accent, pure black bands --- */
-[data-theme="mustard"] {
-  --paper:        #FCFBF4;
-  --paper-2:      #F3F0E1;
+/* --- Mauve-gray paper, deep plum accent --- */
+[data-theme="plum"] {
+  --paper:        #FAF7F8;
+  --paper-2:      #F0EAEE;
   --card:         #FFFFFF;
-  --ink:          #12120E;
-  --ink-2:        #5F5D50;
-  --line:         #E6E2CE;
-  --line-strong:  #CBC5A8;
-  --accent:       #966D00;
-  --accent-deep:  #6F5100;
-  --accent-soft:  #F6EBC8;
-  --on-accent:    #FFFDF5;
-  --band:         #12120E;
-  --band-ink:     #F4F1E4;
-  --band-ink-2:   #9C9887;
-  --band-line:    #2B2A22;
-  --band-accent:  #EDBB3A;
+  --ink:          #1A1418;
+  --ink-2:        #635A61;
+  --line:         #E7DEE3;
+  --line-strong:  #C9BCC4;
+  --edge:         #9F8896;
+  --accent:       #7A2E63;
+  --accent-deep:  #5A1F49;
+  --accent-soft:  #F5E3EF;
+  --on-accent:    #FFF7FC;
+  --band:         #1B1119;
+  --band-ink:     #F3EAF0;
+  --band-ink-2:   #A2939C;
+  --band-line:    #33222E;
+  --band-accent:  #D687BC;
 }
 
-/* --- Dark charcoal page, amber accent --- */
+/* --- Bone paper, signal red accent, pure black bands --- */
+[data-theme="crimson"] {
+  --paper:        #FAF8F3;
+  --paper-2:      #EFECE3;
+  --card:         #FFFFFF;
+  --ink:          #0A0A0A;
+  --ink-2:        #5B5B57;
+  --line:         #E2DED3;
+  --line-strong:  #C3BEB0;
+  --edge:         #978E76;
+  --accent:       #C4141C;
+  --accent-deep:  #970D14;
+  --accent-soft:  #FADFDC;
+  --on-accent:    #FFFFFF;
+  --band:         #0A0A0A;
+  --band-ink:     #F5F2EB;
+  --band-ink-2:   #96938B;
+  --band-line:    #242422;
+  --band-accent:  #F0503F;
+}
+
+/* --- Warm gray paper, no chromatic accent: monochrome --- */
+[data-theme="graphite"] {
+  --paper:        #F6F5F3;
+  --paper-2:      #E9E7E3;
+  --card:         #FFFFFF;
+  --ink:          #171716;
+  --ink-2:        #5E5C58;
+  --line:         #E0DDD8;
+  --line-strong:  #C2BEB7;
+  --edge:         #938C80;
+  --accent:       #1F1E1C;
+  --accent-deep:  #000000;
+  --accent-soft:  #E4E1DB;
+  --on-accent:    #FAF9F7;
+  --band:         #171716;
+  --band-ink:     #F2F0EC;
+  --band-ink-2:   #97948E;
+  --band-line:    #2C2B28;
+  --band-accent:  #C9C5BD;
+}
+
+/* --- Dark charcoal page, amber accent (the one dark theme) --- */
 [data-theme="ink"] {
   --paper:        #17181A;
   --paper-2:      #1E2023;
@@ -181,6 +216,7 @@
   --ink-2:        #A5A29B;
   --line:         #2E3136;
   --line-strong:  #414650;
+  --edge:         #676F7E;
   --accent:       #E0912F;
   --accent-deep:  #F0A64B;
   --accent-soft:  #3A2C18;
@@ -190,26 +226,6 @@
   --band-ink-2:   #8E8C86;
   --band-line:    #26282C;
   --band-accent:  #E9A445;
-}
-
-/* --- Bone paper, pure black, signal red --- */
-[data-theme="bone"] {
-  --paper:        #FAF8F3;
-  --paper-2:      #EFECE3;
-  --card:         #FFFFFF;
-  --ink:          #0A0A0A;
-  --ink-2:        #5B5B57;
-  --line:         #E2DED3;
-  --line-strong:  #C3BEB0;
-  --accent:       #D22B1F;
-  --accent-deep:  #A11D13;
-  --accent-soft:  #FADFDC;
-  --on-accent:    #FFFFFF;
-  --band:         #0A0A0A;
-  --band-ink:     #F5F2EB;
-  --band-ink-2:   #96938B;
-  --band-line:    #242422;
-  --band-accent:  #F0503F;
 }
 
 /* ---------- Reset ---------- */
@@ -286,7 +302,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 }
 .btn:hover { background: var(--accent-deep); border-color: var(--accent-deep); transform: translateY(-1px); }
 .btn-sm { padding: 9px 14px; font-size: 0.82rem; white-space: nowrap; }
-.btn-ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
+.btn-ghost { background: transparent; color: var(--ink); border-color: var(--edge); }
 .btn-ghost:hover { background: transparent; border-color: var(--ink); color: var(--ink); }
 .btn-block { width: 100%; text-align: center; }
 
@@ -329,7 +345,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
   width: 44px; height: 44px;
   display: grid; place-items: center;
   background: transparent;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--edge);
   border-radius: 2px;
   cursor: pointer;
 }
@@ -452,7 +468,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .tick {
   flex: 0 0 auto; width: 24px; height: 24px; margin-top: 2px;
   display: grid; place-items: center;
-  background: var(--accent-soft); color: var(--accent);
+  background: var(--accent-soft); color: var(--accent-deep);
   border-radius: 50%; font-size: 0.72rem; font-weight: 700;
 }
 .problem-list h3 { margin-bottom: 4px; }
@@ -612,7 +628,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .field select, .field textarea {
   width: 100%;
   background: var(--paper);
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--edge);
   border-radius: 2px;
   padding: 11px 13px;
   font-size: 0.97rem;
@@ -630,7 +646,7 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 .pill input { position: absolute; opacity: 0; width: 0; height: 0; }
 .pill span {
   display: inline-block;
-  border: 1px solid var(--line-strong);
+  border: 1px solid var(--edge);
   border-radius: 999px;
   padding: 8px 16px;
   font-size: 0.9rem; font-weight: 500;

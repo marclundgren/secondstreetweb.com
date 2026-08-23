@@ -1,17 +1,23 @@
 /* Review-only palette switcher.
    Usage: ?theme=<name>  (default: clay)
-   clay | navy | oxblood | slate | cobalt | harbor | mustard | ink | bone
+   clay | crimson | oxblood | brass | teal | cobalt | plum | graphite | ink
    Delete this file and the .theme-switch block in index.html before launch. */
 (function () {
-  var THEMES = ['clay', 'navy', 'oxblood', 'slate', 'cobalt',
-                'harbor', 'mustard', 'ink', 'bone'];
+  var THEMES = ['clay', 'crimson', 'oxblood', 'brass', 'teal',
+                'cobalt', 'plum', 'graphite', 'ink'];
+
+  // Earlier round's names, so shared links keep working.
+  var ALIASES = { navy: 'brass', slate: 'teal', bone: 'crimson',
+                  harbor: 'clay', mustard: 'brass' };
   var root = document.documentElement;
 
   function current() {
     var q = new URLSearchParams(location.search).get('theme');
+    if (q && ALIASES[q]) q = ALIASES[q];
     if (THEMES.indexOf(q) > -1) return q;
     try {
       var saved = localStorage.getItem('ssw-theme');
+      if (saved && ALIASES[saved]) saved = ALIASES[saved];
       if (THEMES.indexOf(saved) > -1) return saved;
     } catch (e) {}
     return 'clay';
