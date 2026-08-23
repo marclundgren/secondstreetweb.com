@@ -1,5 +1,9 @@
 # lab/ — parallel design experiments
 
+**Browse them at [`/lab/`](https://marclundgren.github.io/secondstreetweb.com/lab/)**, which links to every
+version with palette shortcuts. A `.nojekyll` file at the repo root keeps GitHub
+Pages from rendering this README as that directory's page.
+
 Alternate directions, kept out of the way of the main concept at the repo root.
 Nothing in here is linked from `/index.html`, so the Orange County page can keep
 being iterated on without these getting in the way. Each experiment is a
