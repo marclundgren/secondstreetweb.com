@@ -19,7 +19,17 @@ Three palettes are wired up so you can compare them:
 
 There's also a pill switcher fixed at the bottom of the page. Pick a winner and
 delete `theme.js` plus the `.theme-switch` block in `index.html` — the palette
-you keep just becomes the `:root` block in `styles.css`.
+you keep just becomes the `:root` block in `styles.css`. (`nav.js` stays — that
+one drives the mobile menu.)
+
+## Files
+
+| File | Ships? |
+| --- | --- |
+| `index.html`, `styles.css` | yes |
+| `fonts/*.woff2` | yes — Fraunces + Karla, subset, self-hosted |
+| `nav.js` | yes — mobile menu toggle |
+| `theme.js` | **no** — palette preview only, delete before launch |
 
 ## Before this goes live
 
