@@ -485,17 +485,12 @@ a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset:
 }
 .tier-desc { color: var(--ink-2); padding-bottom: 20px; border-bottom: 1px solid var(--line); }
 .tier-desc em { color: var(--ink); font-style: italic; }
-.tier-list { margin: 20px 0 24px; display: grid; gap: 11px; }
+.tier-list { margin: 20px 0 0; display: grid; gap: 11px; }
 .tier-list li { position: relative; padding-left: 24px; font-size: 0.97rem; }
 .tier-list li::before {
   content: "→"; position: absolute; left: 0; top: 0;
   color: var(--accent); font-weight: 700;
 }
-.tier-foot {
-  font-size: 0.9rem; color: var(--ink-2);
-  padding-top: 18px; border-top: 1px solid var(--line);
-}
-.tier-foot strong { color: var(--ink); }
 .tiers-note {
   margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line-strong);
   color: var(--ink-2); font-size: 0.97rem; max-width: 56ch;
