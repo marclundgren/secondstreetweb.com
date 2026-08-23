@@ -73,6 +73,14 @@ one drives the mobile menu.)
 - [ ] **Service-area list** — the cities in the strip under the hero are a
       first guess. Swap in the ones you actually want to rank for.
 
+## Parallel experiments
+
+`lab/` holds alternate directions that are deliberately kept off the main page —
+nothing at the repo root links to them. See `lab/README.md`. Currently:
+
+- `lab/centered/` → `/lab/centered/` — centered SaaS-marketing layout modelled on
+  the reference site's shape, in four non-green palettes.
+
 ## GitHub Pages
 
 Repo → Settings → Pages → Source: *Deploy from a branch*, branch `main`, folder
