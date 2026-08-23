@@ -57,12 +57,14 @@ one drives the mobile menu.)
 
 ## Before this goes live
 
-- [ ] **Web3Forms key** — `index.html`, replace `YOUR-WEB3FORMS-ACCESS-KEY`
-      with a real key from <https://web3forms.com> (free, no account needed —
-      they email you the key). Nothing else needs configuring; the form posts
-      directly and messages arrive at whatever address you register.
-      Optionally uncomment the `redirect` hidden input to send people to your
-      own thank-you page instead of Web3Forms'.
+- [x] **Web3Forms key** is wired into all four forms. Submissions post
+      straight to Web3Forms and arrive at the address on that account. Each
+      page sends a different `subject` so you can tell which one a lead came
+      from: `secondstreetweb.com`, `lab/national`, `lab/centered`,
+      `lab/centered-national`.
+- [ ] **Thank-you page** (optional) — right now a submit lands on Web3Forms'
+      own success page, which is off-brand. Uncomment the `redirect` hidden
+      input in each form and point it at a `thanks.html` you control.
 - [ ] **Testimonials** — all three quotes are placeholders and are labeled as
       such on the page. Replace with real quotes (with permission) or cut the
       section entirely. Don't ship the placeholders.

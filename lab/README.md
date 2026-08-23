@@ -99,8 +99,9 @@ labels are the reference's device, the typefaces are not.
   `theme.js` is the palette switcher only and gets deleted before launch.
 - `<meta name="robots" content="noindex">` is set so this never competes with
   the real homepage in search while it's parked on the live site.
-- The audit form posts to Web3Forms and needs the same access key as the main
-  page — search for `YOUR-WEB3FORMS-ACCESS-KEY`.
+- The audit form posts to Web3Forms on the same account as the main page. Each
+  page uses a distinct `subject` so leads are attributable to the variant that
+  produced them.
 - Testimonials are placeholders and labelled as such on the page.
 - The three stats avoid any claim I can't stand behind (no invented "years of
   experience" figure). Add one if you want the reference's opening beat.

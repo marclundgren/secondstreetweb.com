@@ -265,8 +265,9 @@
       </div>
 
       <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- TODO: paste your Web3Forms access key (free at web3forms.com) -->
-        <input type="hidden" name="access_key" value="YOUR-WEB3FORMS-ACCESS-KEY">
+        <!-- Web3Forms public access key. Public by design: it only identifies
+             the destination inbox and cannot be used to read submissions. -->
+        <input type="hidden" name="access_key" value="128522b2-46a1-47de-a74b-624902c74c3e">
         <input type="hidden" name="subject" value="New inquiry from secondstreetweb.com">
         <input type="hidden" name="from_name" value="Second Street Web">
         <!-- Optional: send people to your own thank-you page after submitting -->
