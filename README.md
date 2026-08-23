@@ -80,6 +80,12 @@ nothing at the repo root links to them. See `lab/README.md`. Currently:
 
 - `lab/centered/` → `/lab/centered/` — centered SaaS-marketing layout modelled on
   the reference site's shape, in four non-green palettes.
+- `lab/national/` → `/lab/national/` — this page with every geographic reference
+  removed, for marketing beyond one metro.
+- `lab/centered-national/` → `/lab/centered-national/` — same, for the centered layout.
+
+The region-free variants share this page's stylesheet and fonts, so design
+changes flow through to them — but **copy edits do not**. See `lab/README.md`.
 
 ## GitHub Pages
 
