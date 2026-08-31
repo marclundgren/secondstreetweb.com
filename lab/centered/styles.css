@@ -1,9 +1,9 @@
 /* =========================================================
    Juniper Digital Services — centered/SaaS layout experiment
    A structural mimic of the reference site's homepage shape,
-   with web-dev content and a non-green palette.
+   with web-dev content.
    Type: Space Grotesk (geometric sans) + JetBrains Mono (labels)
-   Theme: ?theme=indigo|azure|magenta|ember
+   Theme: ?theme=indigo|juniper|azure|magenta|ember
    ========================================================= */
 
 @font-face {
@@ -19,31 +19,50 @@
   font-weight: 400 800; font-style: normal; font-display: swap;
 }
 
-/* ---------- Palettes (all deliberately non-green) ---------- */
+/* ---------- Palettes ----------
+   The first four steer clear of the reference site's emerald green.
+   `juniper` does not: it borrows the root layout's brand accent so this
+   experiment can be seen in the real palette.
+
+   `--accent-on-dark` is a lightened variant for the near-black CTA and
+   footer, where the mid-tone accents land at only ~3:1 against #0B0D12 —
+   under the 4.5:1 that footer wordmark needs as text. Same idea as
+   `--band-accent` in the root stylesheet. */
 :root,
 [data-theme="indigo"] {
-  --accent:      #4F46E5;
-  --accent-deep: #3B32C4;
-  --accent-soft: #EAE8FD;
-  --on-accent:   #FFFFFF;
+  --accent:         #4F46E5;
+  --accent-deep:    #3B32C4;
+  --accent-soft:    #EAE8FD;
+  --accent-on-dark: #A29BFF;
+  --on-accent:      #FFFFFF;
+}
+[data-theme="juniper"] {
+  --accent:         #2C6B45;
+  --accent-deep:    #1E4D31;
+  --accent-soft:    #DBE9DD;
+  --accent-on-dark: #6FBB8B;
+  --on-accent:      #FFFFFF;
 }
 [data-theme="azure"] {
-  --accent:      #0B69D4;
-  --accent-deep: #08509F;
-  --accent-soft: #E2EEFC;
-  --on-accent:   #FFFFFF;
+  --accent:         #0B69D4;
+  --accent-deep:    #08509F;
+  --accent-soft:    #E2EEFC;
+  --accent-on-dark: #5FA9FF;
+  --on-accent:      #FFFFFF;
 }
 [data-theme="magenta"] {
-  --accent:      #BE1D66;
-  --accent-deep: #97104E;
-  --accent-soft: #FBE3EE;
-  --on-accent:   #FFFFFF;
+  --accent:         #BE1D66;
+  --accent-deep:    #97104E;
+  --accent-soft:    #FBE3EE;
+  --accent-on-dark: #F179AE;
+  --on-accent:      #FFFFFF;
 }
 [data-theme="ember"] {
-  --accent:      #C2410C;
-  --accent-deep: #9A3208;
-  --accent-soft: #FDE7DA;
-  --on-accent:   #FFFFFF;
+  --accent:         #C2410C;
+  --accent-deep:    #9A3208;
+  --accent-soft:    #FDE7DA;
+  --accent-on-dark: #FF8F53;
+  --on-accent:      #FFFFFF;
 }
 
 :root {
@@ -286,7 +305,7 @@ h2.center { max-width: 16em; }
 }
 .cta-fields input::placeholder { color: #8C93A3; }
 .cta-fields input:focus {
-  outline: none; border-color: var(--accent);
+  outline: none; border-color: var(--accent-on-dark);
   box-shadow: 0 0 0 3px rgba(255,255,255,.12);
 }
 .cta-note { margin-top: 20px; font-size: 0.85rem; color: var(--dark-2); }
@@ -301,7 +320,7 @@ h2.center { max-width: 16em; }
   padding-top: clamp(30px, 4.5vw, 42px); padding-bottom: 30px;
 }
 .footer-brand { font-weight: 700; font-size: 1.08rem; letter-spacing: -0.03em; }
-.footer-brand span { color: var(--accent); }
+.footer-brand span { color: var(--accent-on-dark); }
 .footer-nav { display: flex; flex-wrap: wrap; gap: 10px 24px; }
 .footer-nav a { color: var(--dark-2); text-decoration: none; font-size: 0.93rem; }
 .footer-nav a:hover { color: #fff; }

@@ -84,17 +84,24 @@ tiles, a 2×2 numbered process grid, a split "why me" section with check cards,
 two testimonials with star ratings, and a `+`/`×` FAQ accordion. Content is
 web development instead of Google Ads.
 
-**Palettes** — four. These were picked to stay well away from the reference
-site's emerald green. That constraint is worth revisiting now the brand is
-Juniper: the root page has a green `juniper` palette and this experiment does
-not, so the two directions no longer share a look.
+**Palettes** — five. The original four stay well away from the reference
+site's emerald green. `juniper` deliberately does not: it reuses the root
+layout's brand accent so this experiment can be seen in the real colour.
+`indigo` is still the default; switch with `?theme=juniper`.
 
-| `?theme=` | Accent |
-| --- | --- |
-| `indigo` *(default)* | `#4F46E5` violet-blue |
-| `azure` | `#0B69D4` blue |
-| `magenta` | `#BE1D66` raspberry |
-| `ember` | `#C2410C` burnt orange |
+| `?theme=` | Accent | On dark |
+| --- | --- | --- |
+| `indigo` *(default)* | `#4F46E5` violet-blue | `#A29BFF` |
+| `juniper` | `#2C6B45` evergreen — same as the root layout | `#6FBB8B` |
+| `azure` | `#0B69D4` blue | `#5FA9FF` |
+| `magenta` | `#BE1D66` raspberry | `#F179AE` |
+| `ember` | `#C2410C` burnt orange | `#FF8F53` |
+
+Each palette carries an `--accent-on-dark` variant. The mid-tone accents sit at
+only ~3:1 against the near-black CTA and footer (`#0B0D12`), under the 4.5:1 the
+footer wordmark needs as text — all four originals had this, so the token fixes
+the set rather than just the new entry. Same pattern as `--band-accent` in the
+root stylesheet. Every palette now clears 4.5:1 on all seven checked pairs.
 
 **Type** — Space Grotesk (geometric sans) + JetBrains Mono for the eyebrows,
 badge and stat numerals. Self-hosted and subset, same as the main page; the mono
