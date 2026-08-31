@@ -1,9 +1,9 @@
 /* Review-only palette switcher.
-   Usage: ?theme=<name>  (default: clay)
-   clay | crimson | oxblood | brass | teal | cobalt | plum | graphite | ink
+   Usage: ?theme=<name>  (default: juniper)
+   juniper | clay | crimson | oxblood | brass | teal | cobalt | plum | graphite | ink
    Delete this file and the .theme-switch block in index.html before launch. */
 (function () {
-  var THEMES = ['clay', 'crimson', 'oxblood', 'brass', 'teal',
+  var THEMES = ['juniper', 'clay', 'crimson', 'oxblood', 'brass', 'teal',
                 'cobalt', 'plum', 'graphite', 'ink'];
 
   // Earlier round's names, so shared links keep working.
@@ -16,16 +16,16 @@
     if (q && ALIASES[q]) q = ALIASES[q];
     if (THEMES.indexOf(q) > -1) return q;
     try {
-      var saved = localStorage.getItem('ssw-theme');
+      var saved = localStorage.getItem('jds-theme');
       if (saved && ALIASES[saved]) saved = ALIASES[saved];
       if (THEMES.indexOf(saved) > -1) return saved;
     } catch (e) {}
-    return 'clay';
+    return 'juniper';
   }
 
   function apply(theme) {
     root.setAttribute('data-theme', theme);
-    try { localStorage.setItem('ssw-theme', theme); } catch (e) {}
+    try { localStorage.setItem('jds-theme', theme); } catch (e) {}
     document.querySelectorAll('[data-theme-set]').forEach(function (b) {
       b.setAttribute('aria-pressed', String(b.dataset.themeSet === theme));
     });
