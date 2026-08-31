@@ -49,7 +49,7 @@ What changed from the root page, and nothing else:
 | --- | --- |
 | Eyebrow "Orange County, California" | "Independent Web Developer" |
 | "for local small businesses" | "for small businesses" |
-| Storefront plaque "Est. Orange County" | "Est. Second Street" |
+| Storefront plaque "Est. Orange County" | "Est. 2026" |
 | City strip (Old Towne Orange, Fullerton, …) | Business types (retail, dental & medical, studios, trades, …) |
 | "We talk, in person if you'd like" | "We talk, on your schedule" |
 | "Twenty minutes at your counter or over the phone" | "Twenty minutes on a call — or at your counter, if you're close by" |
@@ -84,7 +84,10 @@ tiles, a 2×2 numbered process grid, a split "why me" section with check cards,
 two testimonials with star ratings, and a `+`/`×` FAQ accordion. Content is
 web development instead of Google Ads.
 
-**Palettes** — four, all well away from the reference's emerald green:
+**Palettes** — four. These were picked to stay well away from the reference
+site's emerald green. That constraint is worth revisiting now the brand is
+Juniper: the root page has a green `juniper` palette and this experiment does
+not, so the two directions no longer share a look.
 
 | `?theme=` | Accent |
 | --- | --- |

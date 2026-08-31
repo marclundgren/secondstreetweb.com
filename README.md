@@ -1,4 +1,4 @@
-# Second Street Web — homepage concept
+# Juniper Digital Services — homepage concept
 
 A single static homepage for review. No build step, no dependencies.
 Open `index.html` in a browser, or serve the folder:
@@ -9,7 +9,7 @@ python3 -m http.server 8000
 
 ## Palette preview
 
-Nine palettes are wired up. Append `?theme=<name>`, e.g. `index.html?theme=teal`.
+Ten palettes are wired up. Append `?theme=<name>`, e.g. `index.html?theme=teal`.
 
 Each theme is named for the colour you'd call the site — the accent that
 carries the headline, buttons and awning — except `ink`, where the dark
@@ -17,7 +17,8 @@ ground is the dominant impression.
 
 | Name | Paper | Accent | Reads as |
 | --- | --- | --- | --- |
-| `clay` *(default)* | warm cream | terracotta | local, hand-built, storefront |
+| `juniper` *(default)* | cool off-white | evergreen | the namesake — calm, durable |
+| `clay` | warm cream | terracotta | local, hand-built, storefront |
 | `crimson` | bone | signal red on black | Swiss, editorial, bold |
 | `oxblood` | blush | deep burgundy | restrained, formal |
 | `brass` | warm cream | brass on navy | established, civic |
@@ -41,6 +42,12 @@ across thirteen foreground/background pairs; that turned up a brass accent below
 why there's a separate `--edge` token for interactive borders rather than
 reusing the decorative `--line-strong` hairline.
 
+`juniper` was added later and held to the same bar: sixteen foreground/background
+pairs checked, all passing — the tightest are `--edge` on paper at 3.39:1 against
+1.4.11's 3:1 floor and `--accent` on paper at 5.91:1. Its accent `#2C6B45` is
+ΔE 27.6 from `teal`, the nearest existing accent, so it clears the ΔE 26 spacing
+floor and no two themes read as the same palette.
+
 There's also a pill switcher fixed at the bottom of the page. Pick a winner and
 delete `theme.js` plus the `.theme-switch` block in `index.html` — the palette
 you keep just becomes the `:root` block in `styles.css`. (`nav.js` stays — that
@@ -60,8 +67,11 @@ one drives the mobile menu.)
 - [x] **Web3Forms key** is wired into all four forms. Submissions post
       straight to Web3Forms and arrive at the address on that account. Each
       page sends a different `subject` so you can tell which one a lead came
-      from: `secondstreetweb.com`, `lab/national`, `lab/centered`,
+      from: `Juniper (home)`, `lab/national`, `lab/centered`,
       `lab/centered-national`.
+- [ ] **Domain** — nothing is registered yet. The `redirect` hidden input in
+      each form is commented out and points at a `YOUR-DOMAIN` placeholder;
+      fill it in once a domain is settled. See "Naming" below.
 - [ ] **Thank-you page** (optional) — right now a submit lands on Web3Forms'
       own success page, which is off-brand. Uncomment the `redirect` hidden
       input in each form and point it at a `thanks.html` you control.
@@ -92,7 +102,7 @@ changes flow through to them — but **copy edits do not**. See `lab/README.md`.
 ## GitHub Pages
 
 Repo → Settings → Pages → Source: *Deploy from a branch*, branch `main`, folder
-`/ (root)`. For the custom domain, add `secondstreetweb.com` under Pages →
+`/ (root)`. For the custom domain, add the domain you register under Pages →
 Custom domain (that writes a `CNAME` file), then point DNS at GitHub:
 
 - `A` records for the apex → `185.199.108.153`, `185.199.109.153`,
@@ -100,3 +110,26 @@ Custom domain (that writes a `CNAME` file), then point DNS at GitHub:
 - `CNAME` for `www` → `<your-github-username>.github.io`
 
 Then tick **Enforce HTTPS** once the cert issues.
+
+## Naming
+
+The site and business name is **Juniper Digital Services** — already the LLC in
+the footer, now promoted to the front of the page. Nothing is registered yet, so
+this is still reversible.
+
+Two things worth knowing before it isn't:
+
+- **The old name had a neighbour.** `lab/centered/` was modelled on
+  `secondstreetdigital.com`, a real agency. "Second Street Web" sat one word
+  away from it. "Juniper" has no such collision.
+- **The name now implies a colour.** The palettes deliberately avoided green
+  because the reference site was emerald. A brand called Juniper points straight
+  at it, so `juniper` (evergreen on cool off-white) is the new default and
+  terracotta `clay` is one click away in the switcher. The `lab/centered/`
+  experiment keeps its own four non-green palettes and has *not* been re-themed
+  — see `lab/README.md`.
+
+Domain is still open. `juniperdigitalservices.com` is a mouthful at 24
+characters; `juniperdigital.com` or `juniperweb.com` may be worth pricing first.
+The wordmark reads "Juniper *Digital Services*", so a shorter domain still
+matches what's on the page.

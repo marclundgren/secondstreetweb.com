@@ -1,7 +1,7 @@
 /* =========================================================
-   Second Street Web — homepage
+   Juniper Digital Services — homepage
    Type:  Fraunces (display serif, SOFT+WONK axes) / Karla (humanist sans)
-   Theme: three palettes, switchable via ?theme=clay|navy|oxblood
+   Theme: ten palettes, switchable via ?theme=juniper|clay|teal|...
    ========================================================= */
 
 /* ---------- Self-hosted variable fonts ----------
@@ -35,11 +35,32 @@
 /* ---------- Palettes ----------
    Naming rule: a theme is named for the colour you'd call the site.
    For the light themes that's the accent (headline, buttons, awning);
-   for the one dark theme it's the ground. Nine themes, hues spaced so
+   for the one dark theme it's the ground. Ten themes, hues spaced so
    no two read as the same palette — see the audit note in README. */
 
-/* --- Cream paper, terracotta accent, warm dark bands --- */
+/* --- Cool off-white paper, evergreen accent (the namesake) --- */
 :root,
+[data-theme="juniper"] {
+  --paper:        #F5F7F2;
+  --paper-2:      #E7ECE2;
+  --card:         #FCFDFA;
+  --ink:          #15201A;
+  --ink-2:        #576358;
+  --line:         #DCE3D6;
+  --line-strong:  #BCC6B3;
+  --edge:         #7B8A78;
+  --accent:       #2C6B45;
+  --accent-deep:  #1E4D31;
+  --accent-soft:  #DBE9DD;
+  --on-accent:    #F5FBF6;
+  --band:         #141F18;
+  --band-ink:     #E9EFE8;
+  --band-ink-2:   #9AAC9C;
+  --band-line:    #2A382E;
+  --band-accent:  #79C193;
+}
+
+/* --- Cream paper, terracotta accent, warm dark bands --- */
 [data-theme="clay"] {
   --paper:        #FBF6EE;
   --paper-2:      #F3E9DA;
