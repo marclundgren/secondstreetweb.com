@@ -126,8 +126,8 @@ Two things worth knowing before it isn't:
   because the reference site was emerald. A brand called Juniper points straight
   at it, so `juniper` (evergreen on cool off-white) is the new default and
   terracotta `clay` is one click away in the switcher. The `lab/centered/`
-  experiment keeps its own four non-green palettes and has *not* been re-themed
-  — see `lab/README.md`.
+  experiment now carries the same ten palettes, generated from the token sets
+  here so both layouts show identical colour — see `lab/README.md`.
 
 Domain is still open. `juniperdigitalservices.com` is a mouthful at 24
 characters; `juniperdigital.com` or `juniperweb.com` may be worth pricing first.

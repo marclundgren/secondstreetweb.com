@@ -1,18 +1,30 @@
 /* Review-only palette switcher for the centered layout experiment.
-   Usage: ?theme=indigo | juniper | azure | magenta | ember   (default: indigo)
+   Usage: ?theme=<name>  (default: juniper)
+   juniper | clay | crimson | oxblood | brass | teal | cobalt | plum | graphite | ink
+   Same ten names as the root layout, so a colour can be compared across both.
    Delete this file and the .theme-switch block in index.html before launch. */
 (function () {
-  var THEMES = ['indigo', 'juniper', 'azure', 'magenta', 'ember'];
+  var THEMES = ['juniper', 'clay', 'crimson', 'oxblood', 'brass', 'teal',
+                'cobalt', 'plum', 'graphite', 'ink'];
+
+  // Retired centered-only palettes, plus the root layout's own older names,
+  // mapped to their nearest surviving palette so shared links keep working.
+  // indigo/ember were dropped as near-duplicates of cobalt/clay (dE 9.2, 15.4).
+  var ALIASES = { indigo: 'cobalt', azure: 'cobalt', magenta: 'plum', ember: 'clay',
+                  navy: 'brass', slate: 'teal', bone: 'crimson',
+                  harbor: 'clay', mustard: 'brass' };
   var root = document.documentElement;
 
   function current() {
     var q = new URLSearchParams(location.search).get('theme');
+    if (q && ALIASES[q]) q = ALIASES[q];
     if (THEMES.indexOf(q) > -1) return q;
     try {
       var saved = localStorage.getItem('jds-lab-theme');
+      if (saved && ALIASES[saved]) saved = ALIASES[saved];
       if (THEMES.indexOf(saved) > -1) return saved;
     } catch (e) {}
-    return 'indigo';
+    return 'juniper';
   }
 
   function apply(theme) {

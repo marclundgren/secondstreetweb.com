@@ -84,24 +84,46 @@ tiles, a 2×2 numbered process grid, a split "why me" section with check cards,
 two testimonials with star ratings, and a `+`/`×` FAQ accordion. Content is
 web development instead of Google Ads.
 
-**Palettes** — five. The original four stay well away from the reference
-site's emerald green. `juniper` deliberately does not: it reuses the root
-layout's brand accent so this experiment can be seen in the real colour.
-`indigo` is still the default; switch with `?theme=juniper`.
+**Palettes** — the same ten as the root layout, with identical token values, so
+a colour can be compared across both layouts rather than guessed at. `juniper`
+is the default here too.
 
 | `?theme=` | Accent | On dark |
 | --- | --- | --- |
-| `indigo` *(default)* | `#4F46E5` violet-blue | `#A29BFF` |
-| `juniper` | `#2C6B45` evergreen — same as the root layout | `#6FBB8B` |
-| `azure` | `#0B69D4` blue | `#5FA9FF` |
-| `magenta` | `#BE1D66` raspberry | `#F179AE` |
-| `ember` | `#C2410C` burnt orange | `#FF8F53` |
+| `juniper` *(default)* | `#2C6B45` evergreen | `#79C193` |
+| `clay` | `#B24E23` terracotta | `#E8926A` |
+| `crimson` | `#C4141C` signal red | `#F0503F` |
+| `oxblood` | `#7E2230` burgundy | `#DE9080` |
+| `brass` | `#906714` brass | `#DCAE45` |
+| `teal` | `#0E6B72` petrol | `#4FBFC6` |
+| `cobalt` | `#1B45D8` cobalt | `#7E99FF` |
+| `plum` | `#7A2E63` deep magenta | `#D687BC` |
+| `graphite` | `#1F1E1C` monochrome | `#C9C5BD` |
+| `ink` | `#E0912F` amber on charcoal | `#E9A445` |
 
-Each palette carries an `--accent-on-dark` variant. The mid-tone accents sit at
-only ~3:1 against the near-black CTA and footer (`#0B0D12`), under the 4.5:1 the
-footer wordmark needs as text — all four originals had this, so the token fixes
-the set rather than just the new entry. Same pattern as `--band-accent` in the
-root stylesheet. Every palette now clears 4.5:1 on all seven checked pairs.
+The palette blocks in `centered/styles.css` are generated from the token sets in
+the root `styles.css`, mapped `--paper/--alt/--card` ← `--paper/--paper-2/--card`
+and `--dark/--on-dark/--dark-2/--dark-line/--accent-on-dark` ← the `--band*`
+family. Change a colour in the root stylesheet and re-generate rather than
+editing both by hand.
+
+**Retired** — `indigo`, `azure`, `magenta` and `ember`, the four placeholder
+palettes from when this experiment had no brand colour to use. `indigo` was
+ΔE 9.2 from `cobalt` and `ember` ΔE 15.4 from `clay` — under the ΔE 26 spacing
+floor the rest of the set is held to, so the switcher had three blues and two
+oranges that read the same. `azure` and `magenta` *were* distinct; they were
+dropped for parity, not for spacing, and could be added back to both layouts if
+you want them in the system. `theme.js` aliases all four to their nearest
+survivor so old `?theme=` links still resolve.
+
+**Accessibility** — the layout no longer hardcodes any colour except a drop
+shadow: `ink` inverts the ground, so every surface had to become a token. 210
+foreground/background pairs (10 palettes × 21 element pairs) were checked and
+all pass, tightest being the rating stars on `oxblood` at 4.63:1. Two fixes came
+out of that sweep: `.section-alt .eyebrow` uses `--accent-deep` because the
+mid-tone accent fell to 4.36:1 (`clay`) and 4.11:1 (`brass`) as small text on
+the alt ground, and `--star` replaced a hardcoded `#E0A020` that sat at ~2.25:1
+on nine of the ten card surfaces.
 
 **Type** — Space Grotesk (geometric sans) + JetBrains Mono for the eyebrows,
 badge and stat numerals. Self-hosted and subset, same as the main page; the mono
